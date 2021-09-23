@@ -12,7 +12,7 @@ public class OnGround : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //Debug.Log("onTriggerEnter2D");
+        // Debug.Log("onTriggerEnter2D");
         if (collision.tag == groundTag)
         {
             isGroundEnter = true;
@@ -52,6 +52,7 @@ public class OnGround : MonoBehaviour
         isGroundEnter = false;
         isGroundStay = false;
         isGroundExit = false;
+        
         return isGround;
     }
 

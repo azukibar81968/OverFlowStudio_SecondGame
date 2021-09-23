@@ -169,9 +169,9 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.18, y: 0.39}
-  m_Direction: 0
+  m_Offset: {x: 0, y: 0.06}
+  m_Size: {x: 0.44, y: 0.12}
+  m_Direction: 1
 --- !u!114 &1601143489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,3 +186,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.01
   thrust: 1
+  superthrust: 1.5
+  onGround: {fileID: 0}
+  isGround: 0
+  isDead: 0
+  isSquat: 0
+  bomb: {fileID: 0}
+  jump: {fileID: 0}
+  superjump: {fileID: 0}
+  squat: {fileID: 0}
+  shot: {fileID: 0}
+  Rate: 50

@@ -6,9 +6,12 @@ using UnityEngine.Tilemaps;
 public class Bomb : MonoBehaviour
 {
     int deathCnt = 0;
+
+    public AudioSource hit;
+
     private void Update()
     {
-        this.gameObject.transform.Translate(0.1f, 0, 0);
+        this.gameObject.transform.Translate(0, 0, 0);
         if (deathCnt > 9)
         {
             Destroy(this.gameObject);
@@ -22,6 +25,8 @@ public class Bomb : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D ot)
     {
+        hit.PlayOneShot(hit.clip);
+
         Debug.Log("bomb collidion");
         Vector3 hitPos = Vector3.zero;
         foreach (ContactPoint2D point in ot.contacts)
@@ -61,6 +66,7 @@ public class Bomb : MonoBehaviour
 
         if (tiletmp != null)
         {
+
             Tilemap map = ot.gameObject.GetComponent<Tilemap>();
             TilemapCollider2D tileCol = ot.gameObject.GetComponent<TilemapCollider2D>();
 
@@ -68,7 +74,7 @@ public class Bomb : MonoBehaviour
             tileCol.enabled = false;
             tileCol.enabled = true;
 
-            Destroy(this.gameObject);
+            //Destroy(this.gameObject);
         }
     }
 }
